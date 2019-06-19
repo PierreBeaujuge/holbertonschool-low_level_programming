@@ -1,0 +1,1 @@
+Learn and practice the basics of C, low-level programming
