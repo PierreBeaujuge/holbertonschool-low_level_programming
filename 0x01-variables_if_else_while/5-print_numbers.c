@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 /**
@@ -5,13 +6,15 @@
 *
 * Return: Always 0 (Success)
 */
-/* betty style doc for function main goes there */
 int main(void)
 {
 int num;
 num = 0;
 while (num < 10)
+{
 printf("%d", num);
 num++;
+}
+printf("\n");
 return (0);
 }
