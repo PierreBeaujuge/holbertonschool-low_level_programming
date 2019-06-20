@@ -8,10 +8,11 @@
 */
 int main(void)
 {
-int num;
-num = 0;
-while (num < 10)
-putchar();
-num++;
+int n;
+for (n = '0'; n <= '9'; n++)
+{
+putchar(n);
+}
+putchar('\n');
 return (0);
 }
