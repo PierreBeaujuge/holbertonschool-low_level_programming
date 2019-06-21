@@ -11,6 +11,7 @@ int main(void)
 	int n;
 	int m;
 	int p;
+	int k;
 
 	for (n = '0'; n <= '9'; n++)
 	{
@@ -18,15 +19,20 @@ int main(void)
 		{
 			for (p = '0'; p <= '9'; p++)
 			{
-				if (n < m && m < p)
+				for (k = '0'; k <= '9'; k++)
 				{
-					putchar(n);
-					putchar(m);
-					putchar(p);
-					if (!(n == '7' && m == '8' && p == '9'))
+					if (n < m && m < p && p < k)
 					{
-						putchar(',');
+						putchar(n);
+						putchar(m);
 						putchar(' ');
+						putchar(p);
+						putchar(k);
+if (!(n == '9' && m == '8' && p == '9' && k == '9'))
+						{
+							putchar(',');
+							putchar(' ');
+						}
 					}
 				}
 			}
