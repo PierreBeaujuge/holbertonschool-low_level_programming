@@ -21,7 +21,7 @@ int main(void)
 			{
 				for (k = '0'; k <= '9'; k++)
 				{
-					if (n < m && m < p && p < k)
+					if (n <= p && m < k)
 					{
 						putchar(n);
 						putchar(m);
