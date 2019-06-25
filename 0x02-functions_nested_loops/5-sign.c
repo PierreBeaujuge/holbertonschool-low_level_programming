@@ -3,9 +3,9 @@
 /**
  * print_sign - prints the sign of a function
  *
- * int c - is hard-coded in main function
+ * @n: parameter is hard-coded in main function
  *
- * Return: 0 or 1
+ * Return: 0 or 1 or -1
  */
 
 int print_sign(int n)

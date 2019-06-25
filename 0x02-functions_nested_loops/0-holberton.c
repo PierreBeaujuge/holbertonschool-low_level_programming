@@ -1,6 +1,9 @@
 #include "holberton.h"
 
-/*
+/**
+ * main - entry point
+ *
+ * Return: void
  */
 
 int main(void)

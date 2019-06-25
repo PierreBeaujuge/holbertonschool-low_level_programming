@@ -3,7 +3,7 @@
 /**
  * _islower - checks for lowercase character
  *
- * int c - is hard-coded in main function
+ * @c: parameter hard-coded in main function
  *
  * Return: 0 or 1
  */

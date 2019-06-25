@@ -3,7 +3,7 @@
 /**
  * _isalpha - checks for lowercase character
  *
- * parameter 'c' - is hard-coded in main function
+ * @c: parameter is hard-coded in main function
  *
  * Return: 0 or 1
  */
