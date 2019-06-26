@@ -15,6 +15,7 @@ void print_times_table(int n)
 	int m;
 	int firstDigit;
 	int lastDigit;
+	int middleDigit;
 
 	if (n >= 0 && n <= 15)
 	{
@@ -39,6 +40,8 @@ void print_times_table(int n)
 				}
 				else
 				{
+					if (m >= 10 && m <= 99)
+					{
 					lastDigit = m % 10;
 					while (m >= 10)
 					{
@@ -55,6 +58,28 @@ void print_times_table(int n)
 					if (j != n)
 					{
 						_putchar(',');
+					}
+					}
+					else
+					{
+						lastDigit = m % 10;
+						middleDigit = (m / 10) % 10;
+						while (m >= 10)
+						{
+							m = m / 10;
+						}
+						firstDigit = m;
+						if (j != 0)
+						{
+							_putchar(' ');
+						}
+						_putchar(firstDigit + '0');
+						_putchar(middleDigit + '0');
+						_putchar(lastDigit + '0');
+						if (j != n)
+						{
+							_putchar(',');
+						}
 					}
 				}
 			}
