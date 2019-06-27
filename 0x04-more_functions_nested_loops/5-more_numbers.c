@@ -10,21 +10,22 @@
 void more_numbers(void)
 {
 	int i;
-	int k;
-	int j = 0;
+	int j;
+	int firstDigit;
+	int lastDigit;
 
 	while (j < 10)
 	{
-		for (i = '0'; i <= '9'; i++)
+		for (i = 0; i <= 14; i++)
 		{
-			_putchar(i);
-		}
-		i = '1';
-			for (k = '0'; k <= '4'; k++)
+			firstDigit = i / 10 + '0';
+			lastDigit = i % 10 + '0';
+			if (i > 9)
 			{
-				_putchar(i);
-				_putchar(k);
+			_putchar(firstDigit);
 			}
+			_putchar(lastDigit);
+		}
 		_putchar('\n');
 		j++;
 	}
