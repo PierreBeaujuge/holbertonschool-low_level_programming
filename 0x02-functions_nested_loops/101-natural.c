@@ -3,16 +3,17 @@
 #include <stdlib.h>
 
 /**
- * main - prints the sum of all the multiples of 3 or 5 below 1024 (excluded)
+ * natural - prints the sum of all the multiples of 3 or 5 below 1024 (excluded)
+ *
+ * @a: parameter hard-coded in main
+ * @b: parameter hard-coded in main
+ * @N: parameter hard-coded in main
  *
  * Return: sum of all the multiples, ans
  */
 
-int main(void)
+int natural(int a, int b, int N)
 {
-	int a = 3;
-	int b = 5;
-	int N = 1023;
 	int i;
 	int j;
 	int suma;
