@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * natural - prints the sum of all the multiples of 3 or 5 below 1024 (excluded)
+ * natural - words
  *
  * @a: parameter hard-coded in main
  * @b: parameter hard-coded in main
