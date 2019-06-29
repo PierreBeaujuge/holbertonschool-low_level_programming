@@ -2,25 +2,26 @@
 #include<stdlib.h>
 
 /**
- * main - program that finds and prints the largest prime factor of number
+ * main - program that finds and prints the largest prime factor of number N
  *
  * Return: void
  */
 
 int main(void)
 {
-	int N = 100;
+	long N = 612852475143;
 	int i;
 	int m;
 
-	for (i = 2; i < N; i++)
+	for (i = 2; i <= N; i++)
 	{
 		m = N % i;
 		if (m == 0)
 		{
-			m = (N / i) % i;
+			N = N / i;
+			i--;
 		}
-		printf("%d\n", m);
 	}
+	printf("%d\n", i);
 	return (0);
 }
