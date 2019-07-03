@@ -15,20 +15,13 @@ void print_array(int *a, int n)
 {
 	int j;
 
-	if (n > 0)
-	{
-		for (j = 0; j < n; j++)
-			if (j < n - 1)
-			{
-				printf("%d, ", a[j]);
-			}
-			else
-			{
-				printf("%d\n", a[j]);
-			}
-	}
-	else
-	{
-		printf("%d\n", 0);
-	}
+	for (j = 0; j < n; j++)
+		if (j < n - 1)
+		{
+			printf("%d, ", a[j]);
+		}
+		else
+		{
+			printf("%d\n", a[j]);
+		}
 }
