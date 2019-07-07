@@ -13,6 +13,17 @@ char *cap_string(char *s)
 {
 	char *tmp = s;
 
+/*
+ * Case for s[0]
+ */
+	for (; *s >= 'a' && *s <= 'z'; )
+	{
+		*s = *s - 32;
+	}
+	s++;
+/*
+ * Case for s[i>0]
+ */
 	while (*s != '\0')
 	{
 		if (*s == ' ' || *s == '\t' || *s == '\n' || *s == ',' ||
