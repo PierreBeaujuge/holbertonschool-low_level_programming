@@ -12,23 +12,18 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i = 0;
-	int j = 0;
+	char *tmp1 = s1;
+	char *tmp2 = s2;
 
 	while (*s1 != '\0')
 	{
+		if (*s1 >= *s2)
+			return (*s1 - *s2);
+		else if (*s1 < *s2)
+			return (*s1 - *s2);
 		s1++;
-		i++;
 	}
-	while (*s2 != '\0')
-	{
-		s2++;
-		j++;
-	}
-	if (i > j)
-		return (15);
-	else if (j > i)
-		return (-15);
-	else
-		return (0);
+	s1 = tmp1;
+	s2 = tmp2;
+	return (0);
 }
