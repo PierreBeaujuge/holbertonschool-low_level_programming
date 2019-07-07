@@ -11,23 +11,44 @@
 
 char *rot13(char *s)
 {
-	char *tmp = s;
+	int i;
 
-	while (*s != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if ((*s >= 'a' && *s <= 'm') || (*s >= 'A' && *s <= 'M'))
+		while ((s[i] >= 'a' && s[i] <= 'z') ||
+		       (s[i] >= 'A' && s[i] <= 'Z'))
 		{
-			*s = *s + 13;
+			if ((s[i] >= 'N' && s[i] <= 'Z') ||
+			    (s[i] >= 'n' && s[i] <= 'z'))
+				s[i] -= 13;
+			else
+				s[i] += 13;
+			i++;
 		}
-		else
-			while ((*s >= 'n' && *s <= 'z') || (*s >= 'N' && *s <= 'Z'))
-			{
-				*s = *s - 13;
-			}
-		s++;
+		i++;
 	}
-	s = tmp;
 	return (s);
+
+/*
+ *	char *tmp = s;
+ *
+ *	while (*s != '\0')
+ *	{
+ *		if ((*s >= 'a' && *s <= 'm') || (*s >= 'A' && *s <= 'M'))
+ *		{
+ *			*s = *s + 13;
+ *		}
+ *		else
+ *			while ((*s >= 'n' && *s <= 'z') || (*s >= 'N' && *s <= 'Z'))
+ *			{
+ *				*s = *s - 13;
+ *			}
+ *		s++;
+ *	}
+ *	s = tmp;
+ *	return (s);
+ */
 
 /*
  *	char *tmp = s;
