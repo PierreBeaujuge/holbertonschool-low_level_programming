@@ -11,30 +11,30 @@
 
 char *leet(char *s)
 {
-        char *tmp1 = s;
-        char *str1 = "oOlLeEaAtT";
-        char *str2 = "0011334477";
+	char *tmp1 = s;
+	char *str1 = "oOlLeEaAtT";
+	char *str2 = "0011334477";
 	char *tmp2 = str1;
 	char *tmp3 = str2;
 
-        while (*s != '\0')
-        {
-                while (*str1 != '\0')
-                {
-                        if (*s == *str1)
-                        {
-                                *s = *str2;
-                        }
-                        str1++;
+	while (*s != '\0')
+	{
+		while (*str1 != '\0')
+		{
+			if (*s == *str1)
+			{
+				*s = *str2;
+			}
+			str1++;
 			str2++;
-                }
+		}
 		str1 = tmp2;
 		str2 = tmp3;
-                s++;
-        }
-        s = tmp1;
-        return (s);
-
+		s++;
+	}
+	s = tmp1;
+	return (s);
+}
 /*
  *	int i;
  *	char *tmp1 = s;
@@ -57,4 +57,3 @@ char *leet(char *s)
  *	s = tmp1;
  *	return (s);
  */
-}
