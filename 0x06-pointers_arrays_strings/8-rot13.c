@@ -11,18 +11,78 @@
 
 char *rot13(char *s)
 {
-	int i, j;
-	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char rot_it[] =   "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i;
+	char str1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char str2[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char *tmp = s;
 
-	for (i = 0; s[i] != '\0'; i++)
-		for (j = 0; j < 52; j++)
-			if (s[i] == alphabet[j])
-				s[i] = rot_it[j], j = 52;
+	for (; *s != '\0'; s++)
+		for (i = 0; i < 52; i++)
+			if (*s == str1[i])
+				*s = str2[i], i = 52;
+	s = tmp;
 	return (s);
 }
 
 /*
+ * Code not working: need to break out of if and while loop (i = 52 condition)
+ *
+ *	char *tmp1 = s;
+ *	char *str1 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ *	char *str2 = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+ *	char *tmp2 = str1;
+ *	char *tmp3 = str2;
+ *
+ *	while (*s != '\0')
+ *	{
+ *		while (*str1 != '\0')
+ *		{
+ *			if (*s == *str1)
+ *			{
+ *				*s = *str2;
+ *			}
+ *			str1++;
+ *			str2++;
+ *		}
+ *		str1 = tmp2;
+ *		str2 = tmp3;
+ *		s++;
+ *	}
+ *	s = tmp1;
+ *	return (s);
+ */
+
+/*
+ * Code not working: need to break out of if and while loop
+ *
+ *	char *tmp1 = s;
+ *	char *str1 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ *	char *str2 = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+ *	char *tmp2 = str1;
+ *	char *tmp3 = str2;
+ *
+ *	for (; *s != '\0'; )
+ *	{
+ *		for (; *str1 != '\0'; )
+ *		{
+ *			if (*s == *str1)
+ *			{
+ *				*s = *str2;
+ *			}
+ *			str1++;
+ *			str2++;
+ *		}
+ *		str1 = tmp2;
+ *		str2 = tmp3;
+ *		s++;
+ *	}
+ *	s = tmp1;
+ *	return (s);
+ */
+
+/*
+ * Working but one too many if condition (else)
+ *
  *	char *tmp = s;
  *
  *	while (*s != '\0')
@@ -43,6 +103,8 @@ char *rot13(char *s)
  */
 
 /*
+ * Working but one too many if condition (else if)
+ *
  *	char *tmp = s;
  *
  *	while (*s != '\0')
@@ -58,5 +120,5 @@ char *rot13(char *s)
  *		s++;
  *	}
  *	s = tmp;
- *return (s);
+ *      return (s);
  */
