@@ -15,6 +15,7 @@ unsigned int _strspn(char *s, char *accept)
 	int size = 0;
 	unsigned int bytes = 0;
 	char *tmp = accept;
+	int i;
 
 	while (*accept++)
 		size++;
@@ -23,14 +24,15 @@ unsigned int _strspn(char *s, char *accept)
 	while (*s)
 	{
 		accept = tmp;
+		i = 0;
 		while (accept < tmp + size)
 		{
 			if (*s == *accept)
-				bytes++;
+				bytes++, i++;
 			accept++;
-			if (*s != *accept)
-				break;
 		}
+		if (i == 0)
+			break;
 		s++;
 	}
 	return (bytes);
