@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strspn - function that searches a string for any of a set of bytes
+ * _strpbrk - function that searches a string for any of a set of bytes
  *
  * @s: parameter defined in main, pointer to memory (string)
  * @accept: parameter defined in main, characters to be compared with s string
