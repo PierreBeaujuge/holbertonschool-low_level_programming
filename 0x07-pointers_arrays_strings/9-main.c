@@ -8,10 +8,11 @@
  */
 int main(void)
 {
-	char *s = "hello";
-	char *f;
+	char *s0 = "Anne Cognet";
+	char *s1 = "Asaia Palacios";
 
-	f = _strchr(s, 'l');
-	printf("%s\n", f);
+	printf("%s, %s\n", s0, s1);
+	set_string(&s1, s0);
+	printf("%s, %s\n", s0, s1);
 	return (0);
 }
