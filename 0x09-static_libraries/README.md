@@ -1,0 +1,1 @@
+Build a static library from previousy made functions
