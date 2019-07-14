@@ -14,7 +14,7 @@
 int main(int argc, char *argv[])
 {
 	int i;
-	unsigned int sum = 0;
+	int sum = 0;
 
 	if (argc == 1)
 	{
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	else if (argc > 1)
 		for (i = 1; i < argc; i++)
 		{
-			if (*argv[i] > '0' && *argv[i] < '9')
+			if (*argv[i] >= '0' && *argv[i] <= '9')
 			{
 				sum += atoi(argv[i]);
 			}
