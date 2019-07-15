@@ -28,15 +28,11 @@ int main(int argc, char *argv[])
 
 		for (i = 0; i < 5; i++)
 		{
-/**
- *			if (num / coin[i] > 0)
- *			{
- */
+			if (num / coin[i] > 0)
+			{
 				cents += num / coin[i];
 				num = num % coin[i];
-/**
- *			}
- */
+			}
 		}
 		printf("%d\n", cents);
 	return (0);
