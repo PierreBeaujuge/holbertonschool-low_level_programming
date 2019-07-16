@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * str_concat - function that concatenates two strings
+ * alloc_grid - function that returns a pointer to a 2 dimensional array of int
  *
  * @width: width of the grid
  * @height: height of the grid
