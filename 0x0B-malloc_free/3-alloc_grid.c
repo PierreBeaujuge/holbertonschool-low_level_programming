@@ -34,9 +34,6 @@ int **alloc_grid(int width, int height)
 			}
 		}
 	}
-/**
- * initialization step (to 0)
- */
 	for (m = 0; m < height; m++)
 	{
 		for (n = 0; n < width; n++)
