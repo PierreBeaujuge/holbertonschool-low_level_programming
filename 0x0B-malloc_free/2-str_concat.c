@@ -3,39 +3,50 @@
 #include <stdlib.h>
 
 /**
- * _strdup - function that returns a pointer to a newly allocated space
- * in memory, which contains a copy of the string given as a parameter
+ * str_concat - function that concatenates two strings
  *
- * @str: string of chars
+ * @s1: string of chars
+ * @s2: string of chars
  *
  * Return: address of the newly allocated memory
  */
 
-char *_strdup(char *str)
+char *str_concat(char *s1, char *s2)
 {
-	unsigned int len;
+	unsigned int len1, len2;
 	unsigned int i, j;
 	char *str_copy;
-	char *tmp = str;
+	char *tmp1 = s1;
+	char *tmp2 = s2;
 
-	if (str == NULL)
+	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 
 	i = 0;
-	while (*str++)
+	while (*s1++)
 		i++;
-	len = i;
-	str = tmp;
-	printf("%d\n", len);
+	len1 = i;
+	s1 = tmp1;
 
-	str_copy = malloc(len * sizeof(char) + 1);
+	i = 0;
+	while (*s2++)
+		i++;
+	len2 = i;
+	s2 = tmp2;
+
+	str_copy = malloc((len1 + len2) * sizeof(char) + 1);
 	if (str_copy == NULL)
 		return (NULL);
 
 	j = 0;
-	while (j < len)
+	while (j < len1)
 	{
-		str_copy[j] = str[j];
+		str_copy[j] = s1[j];
+		j++;
+	}
+	while (j < len1 + len2)
+	{
+		str_copy[j] = s2[j - len1];
 		j++;
 	}
 	str_copy[j] = '\0';
