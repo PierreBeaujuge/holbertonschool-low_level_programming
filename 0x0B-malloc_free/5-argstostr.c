@@ -14,26 +14,19 @@
 char *argstostr(int ac, char **av)
 {
 	int i, j, k;
-	int *len;
 	int sumlen = 0;
 	char *arg_concat;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	len = malloc(ac * sizeof(int));
-	if (len == NULL)
-	{
-		free(len);
-		return (NULL);
-	}
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
-			;
-		len[i] = j + 1;
-		sumlen += len[i];
+			sumlen++;
+		sumlen++;
 	}
+	sumlen++;
 
 	arg_concat = malloc(sumlen * sizeof(char));
 	if (arg_concat == NULL)
