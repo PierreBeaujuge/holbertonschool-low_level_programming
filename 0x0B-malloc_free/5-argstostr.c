@@ -23,7 +23,10 @@ char *argstostr(int ac, char **av)
 
 	len = malloc(ac * sizeof(int));
 	if (len == NULL)
+	{
+		free(len);
 		return (NULL);
+	}
 
 	for (i = 0; i < ac; i++)
 	{
@@ -35,7 +38,10 @@ char *argstostr(int ac, char **av)
 
 	arg_concat = malloc(sumlen * sizeof(char) + 1);
 	if (arg_concat == NULL)
+	{
+		free(len);
 		return (NULL);
+	}
 
 	k = 0;
 	for (i = 0; i < ac; i++)
