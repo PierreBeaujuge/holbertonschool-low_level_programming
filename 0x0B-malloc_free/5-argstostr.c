@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 			;
-		len[i - 1] = j;
+		len[i - 1] = j + 1;
 		sumlen += len[i - 1];
 	}
 
