@@ -27,7 +27,6 @@ char *argstostr(int ac, char **av)
 		free(len);
 		return (NULL);
 	}
-
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
@@ -39,7 +38,7 @@ char *argstostr(int ac, char **av)
 	arg_concat = malloc(sumlen * sizeof(char) + 1);
 	if (arg_concat == NULL)
 	{
-		free(len);
+		free(arg_concat);
 		return (NULL);
 	}
 
