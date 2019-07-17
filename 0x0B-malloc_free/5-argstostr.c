@@ -31,11 +31,11 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 			;
-		len[i - 1] = j + 1;
-		sumlen += len[i - 1];
+		len[i] = j + 1;
+		sumlen += len[i];
 	}
 
-	arg_concat = malloc(sumlen * sizeof(char) + 1);
+	arg_concat = malloc(sumlen * sizeof(char));
 	if (arg_concat == NULL)
 	{
 		free(arg_concat);
