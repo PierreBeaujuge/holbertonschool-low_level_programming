@@ -4,38 +4,30 @@
 
 /**
  * strtow - function that splits a string into words
- *
  * @str: pointer to the string for processing
- *
- * Return: pointer to an array of strings, address of the newly allocated memory
+ * Return: pointer to an array of strings
+ * address of the newly allocated memory
  */
 
 char **strtow(char *str)
 {
-	int i, j, k, l, m;
-	int count = 0;
-	int len = 0;
+	int i, j, k = 0, l, m, count = 0, len;
 	char **words;
 
 	if (str == NULL || str == '\0')
 		return (NULL);
 
 	for (i = 0; str[i] != '\0'; i++)
-	{
 		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 			count++;
-	}
 	if (count == 0)
 		return (NULL);
-
 	words = malloc((count + 1) * sizeof(char *));
 	if (words == NULL)
 	{
 		free(words);
 		return (NULL);
 	}
-
-	k = 0;
 	for (i = 0; str[i] != '\0' &&  k < count; i++)
 	{
 		if (str[i] != ' ')
@@ -53,8 +45,7 @@ char **strtow(char *str)
 			}
 			for (l = 0; l < len; l++, i++)
 				words[k][l] = str[i];
-			words[k][l] = '\0';
-			k++;
+			words[k][l] = '\0', k++;
 		}
 	}
 	words[k] = NULL;
