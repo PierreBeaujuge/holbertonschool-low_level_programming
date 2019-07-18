@@ -19,7 +19,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
 	{
-		return(NULL);
+		return (NULL);
 	}
 	_memset(ptr, 0, size * nmemb);
 	return (ptr);
@@ -37,14 +37,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 char *_memset(char *s, char b, unsigned int n)
 {
-        unsigned int i;
-        char *tmp = s;
+	unsigned int i;
+	char *tmp = s;
 
-        for (i = 0; i < n; i++)
-        {
-                *s = b;
-                s++;
-        }
-        s = tmp;
-        return (s);
+	for (i = 0; i < n; i++)
+	{
+		*s = b;
+		s++;
+	}
+	s = tmp;
+	return (s);
 }
