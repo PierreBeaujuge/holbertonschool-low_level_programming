@@ -1,7 +1,0 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
-
-char _putchar(int c);
-
-
-#endif
