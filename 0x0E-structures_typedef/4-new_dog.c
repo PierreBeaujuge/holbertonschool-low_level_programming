@@ -18,29 +18,49 @@ dog_t *new_dog(char *name, float age, char *owner)
 	ptr = malloc(sizeof(struct dog));
 	if (ptr == NULL)
 	{
-		free(ptr);
 		return (NULL);
 	}
-	if (name != NULL)
-		ptr->name = name;
-	else
-	{
-		free(ptr);
-		return (NULL);
-	}
-	if (age != '\0')
-		ptr->age = age;
-	else
-	{
-		free(ptr);
-		return (NULL);
-	}
-	if (owner != NULL)
-		ptr->owner = owner;
-	else
-	{
-		free(ptr);
-		return (NULL);
-	}
+	ptr->name = _strdup(name);
+	ptr->age = age;
+	ptr->owner = _strdup(owner);
 	return (ptr);
+}
+
+/**
+ * _strdup - function that returns a pointer to a newly allocated space
+ * in memory, which contains a copy of the string given as a parameter
+ *
+ * @str: string of chars
+ *
+ * Return: address of the newly allocated memory
+ */
+
+char *_strdup(char *str)
+{
+        unsigned int len;
+        unsigned int i, j;
+        char *str_copy;
+        char *tmp = str;
+
+        if (str == NULL)
+                return (NULL);
+
+        i = 0;
+        while (*str++)
+                i++;
+        len = i;
+        str = tmp;
+
+        str_copy = malloc(len * sizeof(char) + 1);
+        if (str_copy == NULL)
+                return (NULL);
+
+        j = 0;
+        while (j < len)
+        {
+                str_copy[j] = str[j];
+                j++;
+        }
+        str_copy[j] = '\0';
+        return (str_copy);
 }
