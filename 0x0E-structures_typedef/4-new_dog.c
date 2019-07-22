@@ -3,13 +3,12 @@
 #include "dog.h"
 
 /**
- * init_dog - function that initialize a variable of type struct dog
- * @d: pointer argument passed from main
+ * new_dog - function that creates a new dog
  * @name: passed from main
  * @age: passed from main
  * @owner: passed from main
  *
- * Description: function that initialize a variable of type struct dog
+ * Return: pointer to the struct
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
