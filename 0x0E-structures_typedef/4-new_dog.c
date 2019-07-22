@@ -20,9 +20,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	ptr->name = _strdup(name);
+	if (_strdup(name) != NULL)
+		ptr->name = _strdup(name);
+	else
+	{
+		free(ptr);
+		return (NULL);
+	}
 	ptr->age = age;
-	ptr->owner = _strdup(owner);
+	if (_strdup(owner) != NULL)
+		ptr->owner = _strdup(owner);
+	else
+	{
+		free(ptr);
+		return (NULL);
+	}
 	return (ptr);
 }
 
@@ -37,30 +49,30 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 char *_strdup(char *str)
 {
-        unsigned int len;
-        unsigned int i, j;
-        char *str_copy;
-        char *tmp = str;
+	unsigned int len;
+	unsigned int i, j;
+	char *str_copy;
+	char *tmp = str;
 
-        if (str == NULL)
-                return (NULL);
+	if (str == NULL)
+		return (NULL);
 
-        i = 0;
-        while (*str++)
-                i++;
-        len = i;
-        str = tmp;
+	i = 0;
+	while (*str++)
+		i++;
+	len = i;
+	str = tmp;
 
-        str_copy = malloc(len * sizeof(char) + 1);
-        if (str_copy == NULL)
-                return (NULL);
+	str_copy = malloc(len * sizeof(char) + 1);
+	if (str_copy == NULL)
+		return (NULL);
 
-        j = 0;
-        while (j < len)
-        {
-                str_copy[j] = str[j];
-                j++;
-        }
-        str_copy[j] = '\0';
-        return (str_copy);
+	j = 0;
+	while (j < len)
+	{
+		str_copy[j] = str[j];
+		j++;
+	}
+	str_copy[j] = '\0';
+	return (str_copy);
 }
