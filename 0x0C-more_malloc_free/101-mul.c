@@ -17,12 +17,12 @@ int main(int argc, char *argv[])
 	int i, j, len1, len2, len, d1, d2, d1d2, carry, *mul;
 
 	if (argc != 3 || !(_isnumber(argv[1])) || !(_isnumber(argv[2])))
-		_error();
+		_error(), exit(98);
 	num1 = argv[1], num2 = argv[2];
 	len1 = _strlen(num1), len2 = _strlen(num2), len = len1 + len2;
 	mul = _calloc(len, sizeof(int));
 	if (mul == NULL)
-		_error();
+		exit(98);
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		d1 = num1[i] - '0';
@@ -85,7 +85,6 @@ void _error(void)
 	for (i = 0; i < 5; i++)
 		_putchar(error[i]);
 	_putchar('\n');
-	exit(98);
 }
 
 /**
