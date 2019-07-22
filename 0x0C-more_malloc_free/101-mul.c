@@ -18,8 +18,6 @@ int main(int argc, char *argv[])
 
 	if (argc != 3 || !(_isnumber(argv[1])) || !(_isnumber(argv[2])))
 		_error();
-	if (argc != 3)
-		return (0);
 	num1 = argv[1], num2 = argv[2];
 	len1 = _strlen(num1), len2 = _strlen(num2), len = len1 + len2;
 	mul = _calloc(len, sizeof(int));
@@ -68,10 +66,10 @@ int _isnumber(char *str)
 
 	for (i = 0; *str != '\0'; i++)
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			return (1);
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 /**
