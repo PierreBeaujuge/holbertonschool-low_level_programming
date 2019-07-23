@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 	for (k = 0; mul[k] == 0 && k < len; k++)
 		;
 	if (k == len)
-		_putchar(mul[len -1] + '0');
+		_putchar(mul[len - 1] + '0');
 	else
 	{
 		for (i = k; i < len; i++)
