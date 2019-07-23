@@ -14,7 +14,7 @@
 int main(int argc, char *argv[])
 {
 	char *num1, *num2;
-	int i, j, len1, len2, len, d1, d2, d1d2, carry, *mul;
+	int i, j, k, len1, len2, len, d1, d2, d1d2, carry, *mul;
 
 	if (argc != 3 || !(_isnumber(argv[1])) || !(_isnumber(argv[2])))
 		_error(), exit(98);
@@ -41,12 +41,15 @@ int main(int argc, char *argv[])
 			mul[i + j] += carry;
 		}
 	}
-	if (mul[0] == 0)
-		i = 1;
+	for (k = 0; mul[k] == 0 && k < len; k++)
+		;
+	if (k == len)
+		_putchar(mul[len -1] + '0');
 	else
-		i = 0;
-	for (; i < len; i++)
-		_putchar(mul[i] + '0');
+	{
+		for (i = k; i < len; i++)
+			_putchar(mul[i] + '0');
+	}
 	_putchar('\n');
 	free(mul);
 	return (0);
