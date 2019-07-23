@@ -3,7 +3,7 @@
 #include "dog.h"
 
 /**
- * frees_dog - function that frees dogs
+ * free_dog - function that frees dogs
  * @d: pointer argument passed from main
  *
  * Description: function that frees dogs
