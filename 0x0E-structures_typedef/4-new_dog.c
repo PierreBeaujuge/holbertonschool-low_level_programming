@@ -15,6 +15,33 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *ptr;
 
+	ptr = malloc(sizeof(dog_t));
+	if (ptr != NULL)
+	{
+		if (_strdup(name) != NULL)
+		{
+			if (_strdup(owner) != NULL)
+			{
+				ptr->name = _strdup(name);
+				ptr->age = age;
+				ptr->owner = _strdup(owner);
+				return (ptr);
+			}
+			else
+			{
+				free(ptr->name);
+				free(ptr);
+			}
+		}
+		else
+			free(ptr);
+	}
+	return (NULL);
+}
+
+/**
+	dog_t *ptr;
+
 	if (name == NULL || owner == NULL)
 		return (NULL);
 	ptr = malloc(sizeof(dog_t));
@@ -34,36 +61,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		ptr->owner = _strdup(owner);
 	}
 	return (ptr);
-}
-
-/**
- * _strdup - returns a pointer to a new string which is a duplicate
- * of string str
- * @str: string to copy
- * Return: pointer to copy of string
- */
-
-char *_strdup(char *str)
-{
-	char *copy_string;
-	unsigned int i, j;
-
-	if (str == NULL)
-		return (NULL);
-	for (i = 0; str[i] != '\0'; i++)
-		;
-	i++;
-	copy_string = malloc(i * sizeof(char));
-	if (copy_string == NULL)
-		return (NULL);
-	j = 0;
-	while (j < i)
-	{
-		copy_string[j] = str[j];
-		j++;
-	}
-	return (copy_string);
-}
+*/
 
 /**
  * _strdup - function that returns a pointer to a newly allocated space
@@ -72,7 +70,7 @@ char *_strdup(char *str)
  * @str: string of chars
  *
  * Return: address of the newly allocated memory
-
+ */
 
 char *_strdup(char *str)
 {
@@ -103,4 +101,3 @@ char *_strdup(char *str)
 	str_copy[j] = '\0';
 	return (str_copy);
 }
- */
