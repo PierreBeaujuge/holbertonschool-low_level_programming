@@ -21,15 +21,16 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 		printf("Error\n"), exit(98);
+	if (argv[2][1] != '\0')
+		printf("Error\n"), exit(99);
 
 	ptr = get_op_func(argv[2]);
-	if (ptr != NULL || argv[2][1] != '\0')
+	if (ptr != NULL)
 	{
 		num1 = atoi(argv[1]);
 		num2 = atoi(argv[3]);
 		calc = (*ptr)(num1, num2);
 		printf("%d\n", calc);
-		return (0);
 	}
 	else
 		printf("Error\n"), exit(99);
