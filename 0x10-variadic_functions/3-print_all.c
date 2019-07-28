@@ -26,7 +26,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 	i = 0;
-	while (format[i])
+	while (format && format[i])
 	{
 		j = 0;
 		while (type[j].vartype)
@@ -47,8 +47,7 @@ void print_all(const char * const format, ...)
 
 /**
  * c_char - prints a char
- * @a: parameter passed from main
- * @b: parameter passed from main
+ * @args: parameter passed from main
  *
  * Return: void
  */
@@ -60,8 +59,7 @@ void c_char(va_list args)
 
 /**
  * i_integer - prints an integer
- * @a: parameter passed from main
- * @b: parameter passed from main
+ * @args: parameter passed from main
  *
  * Return: void
  */
@@ -73,8 +71,7 @@ void i_integer(va_list args)
 
 /**
  * f_float - prints a float
- * @a: parameter passed from main
- * @b: parameter passed from main
+ * @args: parameter passed from main
  *
  * Return: void
  */
@@ -86,8 +83,7 @@ void f_float(va_list args)
 
 /**
  * s_string - prints a string
- * @a: parameter passed from main
- * @b: parameter passed from main
+ * @args: parameter passed from main
  *
  * Return: void
  */
