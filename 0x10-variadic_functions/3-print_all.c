@@ -13,37 +13,31 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	unsigned int i, n;
-	char *str;
+	unsigned int i, j;
+	char *ptr = "";
 
-	n = 0;
-	while (format[n])
-		n++;
+	var_t type[] = {
+		{"c", c_char},
+		{"i", i_integer},
+		{"f", f_float},
+		{"s", s_string},
+		{NULL, NULL}
+	};
+
 	va_start(args, format);
 	i = 0;
 	while (format[i])
 	{
-		if (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' ||
-		    format[i] == 's')
+		j = 0;
+		while (type[j].vartype)
 		{
-			switch (format[i])
+			if (format[i] == *type[j].vartype)
 			{
-			case 'c':
-				printf("%c", va_arg(args, int));
-				break;
-			case 'i':
-				printf("%i", va_arg(args, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(args, double));
-				break;
-			case 's':
-				str = va_arg(args, char *);
-				helper(str);
-				break;
+				printf("%s", ptr);
+				type[j].f(args);
+				ptr = ", ";
 			}
-			if (i != n - 1)
-				printf(", ");
+			j++;
 		}
 		i++;
 	}
@@ -51,22 +45,62 @@ void print_all(const char * const format, ...)
 	va_end(args);
 }
 
-/*
- * if (n == 0)
- * return;
- */
-
 /**
- * helper - check for NULL strings
- * @str: pointer to string
+ * c_char - prints a char
+ * @a: parameter passed from main
+ * @b: parameter passed from main
  *
  * Return: void
  */
 
-void helper(char *str)
+void c_char(va_list args)
 {
+	printf("%c", va_arg(args, int));
+}
+
+/**
+ * i_integer - prints an integer
+ * @a: parameter passed from main
+ * @b: parameter passed from main
+ *
+ * Return: void
+ */
+
+void i_integer(va_list args)
+{
+	printf("%i", va_arg(args, int));
+}
+
+/**
+ * f_float - prints a float
+ * @a: parameter passed from main
+ * @b: parameter passed from main
+ *
+ * Return: void
+ */
+
+void f_float(va_list args)
+{
+	printf("%f", va_arg(args, double));
+}
+
+/**
+ * s_string - prints a string
+ * @a: parameter passed from main
+ * @b: parameter passed from main
+ *
+ * Return: void
+ */
+
+void s_string(va_list args)
+{
+	char *str;
+
+	str = va_arg(args, char *);
 	if (str == NULL)
+	{
 		printf("(nil)");
-	else
-		printf("%s", str);
+		return;
+	}
+	printf("%s", str);
 }
