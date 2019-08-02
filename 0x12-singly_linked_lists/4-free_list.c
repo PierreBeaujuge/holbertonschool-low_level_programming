@@ -4,8 +4,8 @@
 #include <string.h>
 
 /**
- * print_list - function that frees a list_t list
- * @header: pointer to the struct list_t
+ * free_list - function that frees a list_t list
+ * @head: pointer to the struct list_t
  *
  * Return: void
  */

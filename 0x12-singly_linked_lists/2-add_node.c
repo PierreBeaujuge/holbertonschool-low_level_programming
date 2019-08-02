@@ -8,7 +8,7 @@
  * @head: pointer to the pointer to the struct named head
  * @str: pointer to the string str
  *
- * Return: size_t
+ * Return: pointer to the struct list_t
  */
 
 list_t *add_node(list_t **head, const char *str)
