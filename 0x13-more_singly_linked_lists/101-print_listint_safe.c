@@ -24,6 +24,7 @@ size_t print_listint_safe(const listint_t *head)
 	count = 0;
 	while (current != NULL)
 	{
+		count++;
 		diff = current - current->next;
 		printf("[%p] %i\n", (void *)current, current->n);
 		if (diff > 0)
@@ -35,7 +36,6 @@ size_t print_listint_safe(const listint_t *head)
 			printf("-> [%p] %i\n", (void *)current->next, current->next->n);
 			break;
 		}
-		count++;
 	}
 	return (count);
 }
