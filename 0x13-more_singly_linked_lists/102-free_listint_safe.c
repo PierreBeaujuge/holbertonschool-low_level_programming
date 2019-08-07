@@ -14,7 +14,6 @@ size_t free_listint_safe(listint_t **h)
 {
 	int diff = 0;
 	size_t count;
-	int counter = 0;
 	listint_t *temp;
 	listint_t *current;
 
@@ -43,7 +42,5 @@ size_t free_listint_safe(listint_t **h)
 		}
 	}
 	*h = NULL;
-	counter = (int)count;
-	printf("%i\n", counter);
 	return (count);
 }
