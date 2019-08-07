@@ -12,17 +12,28 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
+	int diff = 0;
 	size_t count;
+	const listint_t *current;
 
-	for (count = 0; head != NULL; count++)
+	current = head;
+
+	count = 0;
+	while (current != NULL)
 	{
-		printf("[%p] %i\n", (void *)head, head->n);
-		head = head->next;
-		if (...)
-		     {
-			     printf("-> [%p] %i\n", (void *)head, head->n);
-			     break;
-		     }
+		diff = current - current->next;
+		if (diff > 0)
+		{
+			printf("[%p] %i\n", (void *)current, current->n);
+			current = current->next;
+		}
+		else
+		{
+			printf("[%p] %i\n", (void *)current, current->n);
+			printf("-> [%p] %i\n", (void *)current->next, current->next->n);
+			break;
+		}
+		count++;
 	}
 	return (count);
 }
