@@ -16,12 +16,12 @@ size_t free_listint_safe(listint_t **h)
 	size_t count;
 	listint_t *temp;
 	listint_t *current;
-
+/*
 	if (h == NULL)
-                return (0);
-        if (*h == NULL)
-                return (0);
-
+		return (0);
+	if (*h == NULL)
+		return (0);
+*/
 	current = *h;
 
 	count = 0;
