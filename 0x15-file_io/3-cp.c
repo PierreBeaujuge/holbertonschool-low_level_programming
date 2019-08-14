@@ -39,10 +39,13 @@ int main(int ac, char **av)
 		if (read_count == -1)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
 				file_from), exit(98);
-		/*buf[1024] = '\0';*/
-		write_count = write(fd_to, buf, read_count);
-		if (write_count == -1)
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
+		buf[1024] = '\0';
+		if (read_count != 0)
+		{
+			write_count = write(fd_to, buf, read_count);
+			if (write_count == -1)
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
+		}
 	}
 	close_status = close(fd_from);
 	if (close_status == -1)
