@@ -26,26 +26,26 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		else
 		{
 			if (index == 0 && (*head)->next == NULL)
-				*head = NULL, free_dlistint(temp);
+				*head = NULL, free(temp);
 			else if (index == 0 && (*head)->next != NULL)
 			{
 				delete = *head, *head = (*head)->next;
 				delete->next = NULL, (*head)->prev = NULL;
-				free_dlistint(delete);
+				free(delete);
 			}
 			else if (temp->next == NULL)
 			{
 				delete = temp, temp = temp->prev;
 				delete->prev = NULL;
 				temp->next = NULL;
-				free_dlistint(delete);
+				free(delete);
 			}
 			else
 			{
 				delete = temp, temp = temp->prev;
 				temp->next = temp->next->next;
 				temp->next->prev = temp;
-				delete->prev = NULL, delete->next = NULL, free_dlistint(delete);
+				delete->prev = NULL, delete->next = NULL, free(delete);
 			}
 			return (1);
 		}
