@@ -167,8 +167,8 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	temp = ht->array[index];
 	while (temp != NULL)
 	{
-		if (strcmp(ht->array[index]->key, key) == 0)
-			return (ht->array[index]->value);
+		if (strcmp(temp->key, key) == 0)
+			return (temp->value);
 		temp = temp->next;
 	}
         return (NULL);
