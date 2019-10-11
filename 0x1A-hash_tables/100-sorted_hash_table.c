@@ -92,37 +92,12 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 void connect_nodes(shash_table_t *ht, shash_node_t *new_node)
 {
-/*	int i = 0;*/
 	shash_node_t *temp = NULL;
 
 	temp = ht->shead;
 	while (temp->snext != NULL)
 	{
-/*		for (i = 0; new_node->key[i] != '\0' && temp->key[i] != '\0'; i++)
-		{
-		if (new_node->key[i] < temp->key[i])*/
-		        if (strcmp(new_node->key, temp->key) < 0)
-			{
-				if (temp == ht->shead)
-				{
-					new_node->snext = temp;
-					temp->sprev = new_node;
-					ht->shead = new_node;
-					return;
-				}
-				new_node->snext = temp;
-				temp->sprev->snext = new_node;
-				new_node->sprev = temp->sprev;
-				temp->sprev = new_node;
-				return;
-			}
-/*		}*/
-		temp = temp->snext;
-	}
-/*	for (i = 0; new_node->key[i] != '\0' && temp->key[i] != '\0'; i++)
-	{
-	if (new_node->key[i] < temp->key[i])*/
-	        if (strcmp(new_node->key, temp->key) < 0)
+		if (strcmp(new_node->key, temp->key) < 0)
 		{
 			if (temp == ht->shead)
 			{
@@ -135,10 +110,25 @@ void connect_nodes(shash_table_t *ht, shash_node_t *new_node)
 			temp->sprev->snext = new_node;
 			new_node->sprev = temp->sprev;
 			temp->sprev = new_node;
-/*			ht->shead = new_node;*/
 			return;
 		}
-/*	}*/
+		temp = temp->snext;
+	}
+	if (strcmp(new_node->key, temp->key) < 0)
+	{
+		if (temp == ht->shead)
+		{
+			new_node->snext = temp;
+			temp->sprev = new_node;
+			ht->shead = new_node;
+			return;
+		}
+		new_node->snext = temp;
+		temp->sprev->snext = new_node;
+		new_node->sprev = temp->sprev;
+		temp->sprev = new_node;
+		return;
+	}
 	temp->snext = new_node;
 	new_node->sprev = temp;
 	ht->stail = new_node;
