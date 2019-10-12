@@ -95,6 +95,7 @@ void connect_nodes(shash_table_t *ht, shash_node_t *new_node)
 	shash_node_t *temp, *copy = NULL;
 
 	temp = ht->shead;
+/*	while (temp->snext != NULL)*/
 	while (temp != NULL)
 	{
 		if (strcmp(new_node->key, temp->key) < 0)
@@ -116,6 +117,21 @@ void connect_nodes(shash_table_t *ht, shash_node_t *new_node)
 			copy = temp;
 		temp = temp->snext;
 	}
+/*	if (strcmp(new_node->key, temp->key) < 0)
+	{
+		if (temp == ht->shead)
+		{
+			new_node->snext = temp;
+			temp->sprev = new_node;
+			ht->shead = new_node;
+			return;
+		}
+		new_node->snext = temp;
+		temp->sprev->snext = new_node;
+		new_node->sprev = temp->sprev;
+		temp->sprev = new_node;
+		return;
+		}*/
 	temp = copy;
 	temp->snext = new_node;
 	new_node->sprev = temp;
