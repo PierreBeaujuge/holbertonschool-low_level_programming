@@ -32,16 +32,17 @@ void bitonic_sort(int *array, size_t size)
  * Return: void
  */
 
-void bitonic_sort_recurs(int *array, size_t size, size_t startIdx, size_t count, int dir)
+void bitonic_sort_recurs(int *array, size_t size, size_t startIdx,
+			 size_t count, int dir)
 {
 	int k = 0;
 
 	if (count > 1)
 	{
-                if (dir == 1)
-                        printf("Merging [%lu/%lu] (UP):\n", count, size);
-                if (dir == 0)
-                        printf("Merging [%lu/%lu] (DOWN):\n", count, size);
+		if (dir == 1)
+			printf("Merging [%lu/%lu] (UP):\n", count, size);
+		if (dir == 0)
+			printf("Merging [%lu/%lu] (DOWN):\n", count, size);
 		print_array(array + startIdx, count);
 
 		k = count / 2;
@@ -49,11 +50,11 @@ void bitonic_sort_recurs(int *array, size_t size, size_t startIdx, size_t count,
 		bitonic_sort_recurs(array, size, startIdx + k, k, 0);
 		bitonic_merge(array, startIdx, count, dir);
 
-                if (dir == 1)
-                        printf("Result [%lu/%lu] (UP):\n", count, size);
-                if (dir == 0)
-                        printf("Result [%lu/%lu] (DOWN):\n", count, size);
-                print_array(array + startIdx, count);
+		if (dir == 1)
+			printf("Result [%lu/%lu] (UP):\n", count, size);
+		if (dir == 0)
+			printf("Result [%lu/%lu] (DOWN):\n", count, size);
+		print_array(array + startIdx, count);
 	}
 }
 
@@ -71,11 +72,11 @@ void bitonic_sort_recurs(int *array, size_t size, size_t startIdx, size_t count,
 
 void bitonic_merge(int *array, size_t startIdx, size_t count, int dir)
 {
-        size_t k = 0, i = 0;
+	size_t k = 0, i = 0;
 
-        if (count > 1)
-        {
-                k = count / 2;
+	if (count > 1)
+	{
+		k = count / 2;
 		for (i = startIdx; i < startIdx + k; i++)
 			bitonic_compare(array, i, i + k, dir);
 		bitonic_merge(array, startIdx, k, dir);
