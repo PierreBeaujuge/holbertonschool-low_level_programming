@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * selection_sort - function that sorts an array of integers in ascending order
+ * counting_sort - function that sorts an array of integers in ascending order
  * using the Counting sort algorithm
  * @array: pointer to the array of size "size"
  * @size: size of the array
