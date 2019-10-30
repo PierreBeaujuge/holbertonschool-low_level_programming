@@ -22,16 +22,16 @@ void selection_sort(int *array, size_t size)
 
 	if (!array || size < 2)
 		return;
-	for (j = 0; j < size - 2; j++)
+	for (j = 0; j < size - 1; j++)
 	{
 		flag = 0;
 		minArray = array[j];
-		for (i = j; i < size - 1; i++)
+		for (i = j; i < size; i++)
 		{
-			if (minArray > array[i + 1])
+			if (minArray > array[i])
 			{
-				minArray = array[i + 1];
-				minIdx = i + 1;
+				minArray = array[i];
+				minIdx = i;
 				flag = 1;
 			}
 		}
