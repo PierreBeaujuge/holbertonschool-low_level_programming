@@ -32,6 +32,8 @@ void insertion_sort_list(listint_t **list)
 			if (temp->prev == NULL)
 				*list = temp, temp = copy;
 			print_list(*list);
+			if (temp == NULL)
+				return;
 			while (temp->prev != NULL)
 			{
 				if (temp->n < temp->prev->n)
