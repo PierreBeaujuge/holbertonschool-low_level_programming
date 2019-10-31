@@ -19,7 +19,7 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *temp = NULL/*, *copy = NULL*/, *save = NULL;
 	int flag = 0;
 
-	if (!list || !(*list))
+	if (!list || !(*list) || !(*list)->next)
 		return;
 	while (1)
 	{
@@ -35,6 +35,8 @@ void cocktail_sort_list(listint_t **list)
 		while (temp != NULL)
 		{
 			flag = way_backward(list, &temp, flag);
+                        if (flag == -1)
+                             return;
 			if (temp->prev == NULL)
 				break;
 		}
@@ -55,7 +57,7 @@ int way_forward(listint_t **list, listint_t **temp, int flag)
 {
 	listint_t *copy = NULL;
 
-	if ((*temp)->n > (*temp)->prev->n)
+	if ((*temp)->n >= (*temp)->prev->n)
 		*temp = (*temp)->next;
 	else
 	{
@@ -80,7 +82,12 @@ int way_forward(listint_t **list, listint_t **temp, int flag)
 
 int way_backward(listint_t **list, listint_t **temp, int flag)
 {
-	if ((*temp)->prev->n < (*temp)->n)
+	if ((*temp)->prev == NULL)
+	{
+		flag = -1;
+		return (flag);
+	}
+	if ((*temp)->prev->n <= (*temp)->n)
 		*temp = (*temp)->prev;
 	else
 	{
