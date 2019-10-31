@@ -45,8 +45,6 @@ void insertion_sort_list(listint_t **list)
 					if (temp == NULL)
 						return;
 				}
-				else if (temp->n == temp->prev->n)
-					temp = temp->prev;
 				else
 				{
 					temp = copy;
