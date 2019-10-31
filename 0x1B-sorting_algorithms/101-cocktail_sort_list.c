@@ -35,8 +35,8 @@ void cocktail_sort_list(listint_t **list)
 		while (temp != NULL)
 		{
 			flag = way_backward(list, &temp, flag);
-                        if (flag == -1)
-                             return;
+			if (flag == -1)
+				return;
 			if (temp->prev == NULL)
 				break;
 		}
