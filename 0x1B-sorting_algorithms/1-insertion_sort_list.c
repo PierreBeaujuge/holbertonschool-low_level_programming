@@ -67,6 +67,8 @@ void swap_nodes(listint_t *node)
 {
 	listint_t *prev = NULL;
 
+	if (!node)
+		return;
 	if (node->prev == NULL)
 		return;
 	prev = node->prev;
