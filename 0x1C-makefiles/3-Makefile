@@ -1,0 +1,20 @@
+# This is a Makefile
+
+CC=gcc
+SRC=main.c holberton.c
+OBJ=$(SRC:%.c=%.o)
+NAME=holberton
+RM=rm
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+oclean:
+	$(RM) -f $(OBJ)
+
+clean:
+	$(RM) -f *~ $(NAME)
+
+fclean: clean oclean
+
+re: oclean all
