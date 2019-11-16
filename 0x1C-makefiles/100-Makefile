@@ -5,7 +5,8 @@ SRC=main.c holberton.c
 CFLAGS= -Wall -Werror -Wextra -pedantic
 OBJ=$(SRC:%.c=%.o)
 NAME=holberton
-RM=rm
+
+.PHONY: all oclean clean fclean re
 
 all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
