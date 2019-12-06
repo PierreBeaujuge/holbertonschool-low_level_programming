@@ -22,7 +22,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 		return (0);
 	*data = INT_MIN;
 	result = is_bst(tree, data);
-	free (data);
+	free(data);
 	return (result);
 }
 
