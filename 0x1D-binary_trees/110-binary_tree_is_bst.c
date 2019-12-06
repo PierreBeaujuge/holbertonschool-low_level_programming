@@ -1,6 +1,7 @@
 #include "binary_trees.h"
 
-int is_bst(const binary_tree_t *tree, int *data);
+int is_subtree_lesser(const binary_tree_t *tree, int data);
+int is_subtree_greater(const binary_tree_t *tree, int data);
 
 /**
  * binary_tree_is_bst - function that checks if a binary tree
@@ -12,18 +13,14 @@ int is_bst(const binary_tree_t *tree, int *data);
 
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-	int *data = NULL;
-	int result = 0;
-
 	if (!tree)
-		return (0);
-	data = malloc(sizeof(int));
-	if (!data)
-		return (0);
-	*data = INT_MIN;
-	result = is_bst(tree, data);
-	free(data);
-	return (result);
+		return (1);
+	if (is_subtree_lesser(tree->left, tree->n)
+	    && is_subtree_greater(tree->right, tree->n)
+	    && binary_tree_is_bst(tree->left)
+	    && binary_tree_is_bst(tree->right))
+		return (1);
+	return (0);
 }
 
 /**
@@ -35,22 +32,24 @@ int binary_tree_is_bst(const binary_tree_t *tree)
  * If tree is NULL, return 0
  */
 
-int is_bst(const binary_tree_t *tree, int *data)
+int is_subtree_lesser(const binary_tree_t *tree, int data)
 {
 	if (!tree)
-		return (0);
-	if (tree->left->n < tree->n && tree->right->n > tree->n)
-		if ((!tree->left->left ||
-		     (tree->left->left && tree->left->left->n < *data))
-		    && (!tree->left->right ||
-			(tree->left->right && tree->left->right->n < *data))
-		    && (!tree->right->left ||
-			(tree->right->left && tree->right->left->n > *data))
-		    && (!tree->right->right ||
-			(tree->right->right && tree->right->right->n > *data)))
 		return (1);
-	*data = tree->n;
-	is_bst(tree->left, data);
-	is_bst(tree->right, data);
+	if (tree->n <= data
+	    && is_subtree_lesser(tree->left, data)
+	    && is_subtree_lesser(tree->right, data))
+		return (1);
 	return (0);
+}
+
+int is_subtree_greater(const binary_tree_t *tree, int data)
+{
+        if (!tree)
+                return (1);
+        if (tree->n > data
+            && is_subtree_greater(tree->left, data)
+            && is_subtree_greater(tree->right, data))
+                return (1);
+        return (0);
 }
