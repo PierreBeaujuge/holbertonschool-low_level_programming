@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 
-int is_bst(const binary_tree_t *tree, int data);
+int is_bst(const binary_tree_t *tree, int *data);
 
 /**
  * binary_tree_is_bst - function that checks if a binary tree
@@ -12,9 +12,18 @@ int is_bst(const binary_tree_t *tree, int data);
 
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
+	int *data = NULL;
+	int result = 0;
+
 	if (!tree)
 		return (0);
-	return (is_bst(tree, tree->n));
+	data = malloc(sizeof(int));
+	if (!data)
+		return (0);
+	*data = tree->n;
+	result = is_bst(tree, data);
+	free (data);
+	return (result);
 }
 
 /**
@@ -26,21 +35,21 @@ int binary_tree_is_bst(const binary_tree_t *tree)
  * If tree is NULL, return 0
  */
 
-int is_bst(const binary_tree_t *tree, int data)
+int is_bst(const binary_tree_t *tree, int *data)
 {
 	if (!tree)
 		return (0);
 	if (tree->left->n < tree->n && tree->right->n > tree->n)
 		if ((!tree->left->left ||
-		     (tree->left->left && tree->left->left->n < data))
+		     (tree->left->left && tree->left->left->n < *data))
 		    && (!tree->left->right ||
-			(tree->left->right && tree->left->right->n < data))
+			(tree->left->right && tree->left->right->n < *data))
 		    && (!tree->right->left ||
-			(tree->right->left && tree->right->left->n > data))
+			(tree->right->left && tree->right->left->n > *data))
 		    && (!tree->right->right ||
-			(tree->right->right && tree->right->right->n > data)))
+			(tree->right->right && tree->right->right->n > *data)))
 		return (1);
-	data = tree->n;
+	*data = tree->n;
 	is_bst(tree->left, data);
 	is_bst(tree->right, data);
 	return (0);
