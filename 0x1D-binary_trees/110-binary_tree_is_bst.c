@@ -20,7 +20,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 	data = malloc(sizeof(int));
 	if (!data)
 		return (0);
-	*data = tree->n;
+	*data = INT_MIN;
 	result = is_bst(tree, data);
 	free (data);
 	return (result);
