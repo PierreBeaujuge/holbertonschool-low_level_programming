@@ -40,6 +40,7 @@ int is_bst(const binary_tree_t *tree, int data)
 		    && (!tree->right->right ||
 			(tree->right->right && tree->right->right->n > data)))
 		return (1);
+	data = tree->n;
 	is_bst(tree->left, data);
 	is_bst(tree->right, data);
 	return (0);
