@@ -18,6 +18,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		return (NULL);
 	root = find_tree_root(first);
 	lc_ancestor = search_lc_ancestor(root, first, second);
+	if (!lc_ancestor)
+		return (NULL);
 	return ((binary_tree_t *)lc_ancestor);
 }
 
