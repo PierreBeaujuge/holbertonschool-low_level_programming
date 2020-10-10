@@ -399,7 +399,7 @@ First, solve the problem. Then, write the code
 
 ---
 
-### [10. Great leaders are willing to sacrifice the numbers to save the people. Poor leaders sacrifice the people to save the numbers](./100-atoi.c)
+### 10. Great leaders are willing to sacrifice the numbers to save the people. Poor leaders sacrifice the people to save the numbers
 
 - Write a function that convert a string to an integer.
   - Prototype: `int _atoi(char *s)`;
@@ -465,7 +465,7 @@ julien@ubuntu:~/0x05$ ./100-atoi
 
 ---
 
-### [11. Don't hate the hacker, hate the code](./101-keygen.c)
+### 11. Don't hate the hacker, hate the code
 
 - Create a program that generates random valid passwords for the program 101-crackme.
   - You are allowed to use the standard library
