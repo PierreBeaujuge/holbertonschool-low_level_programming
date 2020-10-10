@@ -272,7 +272,7 @@ http://imgur.com/a/Mq1tc
 
 ---
 
-### [4. elf](./100-elf_header.c)
+### 4. elf
 
 - Write a program that displays the information contained in the ELF header at the start of an ELF file.
   - Requirements: elf_header elf_filename
