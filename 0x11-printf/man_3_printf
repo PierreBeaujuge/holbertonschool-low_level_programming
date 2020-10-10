@@ -1,0 +1,17 @@
+.\" Manpage for _printf
+.\" Contact harrisjasmine@gmail.com or pierre.beaujuge@gmail.com to correct errors or typos.
+.TH man 8 "30 July 2019" "1.0" "_printf man page"
+.SH NAME
+_printf \- function that prints data
+.SH SYNOPSIS
+_printf FORMAT [ARGUMENT]...
+.SH DESCRIPTION
+_printf replicates some of the functions of the more ecompassing printf function. Employing the proper format specifiers _printf can print the following data: string (s), character (c), integer (i), decimal (d), binary (b). The function also includes reverse string and Rot13 functionalities.
+.SH OPTIONS
+No option at this time.
+.SH SEE ALSO
+printf(8)
+.SH BUGS
+No bugs known to date.
+.SH AUTHOR
+Jasmine Harris (harrisjasmine@gmail.com) or Pierre Beaujuge (pierre.beaujuge@gmail.com).
