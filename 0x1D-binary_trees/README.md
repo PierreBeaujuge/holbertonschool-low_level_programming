@@ -292,7 +292,7 @@ Properties of a Binary Search Tree:
 
 ---
 
-### [25. BST - Insert](./111-bst_insert.c)
+### 25. BST - Insert
 
 - Write a function that inserts a value in a Binary Search Tree
   - Prototype: `bst_t *bst_insert(bst_t **tree, int value)`;
@@ -304,7 +304,7 @@ Properties of a Binary Search Tree:
 
 ---
 
-### [26. BST - Array to BST](./112-array_to_bst.c)
+### 26. BST - Array to BST
 
 - Write a function that builds a Binary Search Tree from an array
   - Prototype: `bst_t *array_to_bst(int *array, size_t size)`;
@@ -315,7 +315,7 @@ Properties of a Binary Search Tree:
 
 ---
 
-### [27. BST - Search](./113-bst_search.c)
+### 27. BST - Search
 
 - Write a function that searches for a value in a Binary Search Tree
   - Prototype: `bst_t *bst_search(const bst_t *tree, int value)`;
@@ -326,7 +326,7 @@ Properties of a Binary Search Tree:
 
 ---
 
-### [28. BST - Remove](./114-bst_remove.c)
+### 28. BST - Remove](./114-bst_remove.c
 
 - Write a function that removes a node from a Binary Search Tree
   - Prototype: `bst_t *bst_remove(bst_t *root, int value)`;
@@ -338,7 +338,7 @@ Properties of a Binary Search Tree:
 
 ---
 
-### [29. Big O #BST](./115-O)
+### 29. Big O #BST
 
 - What are the average time complexities of those operations on a Binary Search Tree (one answer per line):
   - Inserting the value n
@@ -347,7 +347,7 @@ Properties of a Binary Search Tree:
 
 ---
 
-### [30. Is AVL](./120-binary_tree_is_avl.c)
+### 30. Is AVL
 
 - Write a function that checks if a binary tree is a valid AVL Tree
   - Prototype: `int binary_tree_is_avl(const binary_tree_t *tree)`;
@@ -363,7 +363,7 @@ An AVL Tree is a BST
 
 ---
 
-### [31. AVL - Insert](./121-avl_insert.c)
+### 31. AVL - Insert
 
 - Write a function that inserts a value in an AVL Tree
   - Prototype: `avl_t *avl_insert(avl_t **tree, int value)`;
@@ -375,7 +375,7 @@ An AVL Tree is a BST
 
 ---
 
-### [32. AVL - Array to AVL](./122-array_to_avl.c)
+### 32. AVL - Array to AVL
 
 - Write a function that builds an AVL tree from an array
   - Prototype: `avl_t *array_to_avl(int *array, size_t size)`;
@@ -386,7 +386,7 @@ An AVL Tree is a BST
 
 ---
 
-### [33. AVL - Remove](./123-avl_remove.c)
+### 33. AVL - Remove
 
 - Write a function that removes a node from an AVL tree
   - Prototype: `avl_t *avl_remove(avl_t *root, int value)`;
@@ -399,7 +399,7 @@ An AVL Tree is a BST
 
 ---
 
-### [34. AVL - From sorted array](./124-sorted_array_to_avl.c)
+### 34. AVL - From sorted array
 
 - Write a function that builds an AVL tree from an array
   - Prototype: `avl_t *sorted_array_to_avl(int *array, size_t size)`;
@@ -412,7 +412,7 @@ An AVL Tree is a BST
 
 ---
 
-### [35. Big O #AVL Tree](./125-O)
+### 35. Big O #AVL Tree
 
 - What are the average time complexities of those operations on an AVL Tree (one answer per line):
   - Inserting the value n
@@ -421,7 +421,7 @@ An AVL Tree is a BST
 
 ---
 
-### [36. Is Binary heap](./130-binary_tree_is_heap.c)
+### 36. Is Binary heap
 
 - Write a function that checks if a binary tree is a valid Max Binary Heap
   - Prototype: `int binary_tree_is_heap(const binary_tree_t *tree)`;
@@ -437,7 +437,7 @@ Properties of a Max Binary Heap:
 
 ---
 
-### [37. Heap - Insert](./131-heap_insert.c)
+### 37. Heap - Insert
 
 - Write a function that inserts a value in Max Binary Heap
   - Prototype: `heap_t *heap_insert(heap_t **root, int value)`
@@ -450,7 +450,7 @@ Properties of a Max Binary Heap:
 
 ---
 
-### [38. Heap - Array to Binary Heap](./132-array_to_heap.c)
+### 38. Heap - Array to Binary Heap
 
 - Write a function that builds a Max Binary Heap tree from an array
   - Prototype: `heap_t *array_to_heap(int *array, size_t size)`;
@@ -460,7 +460,7 @@ Properties of a Max Binary Heap:
 
 ---
 
-### [39. Heap - Extract](./133-heap_extract.c)
+### 39. Heap - Extract
 
 - Write a function that extracts the root node of a Max Binary Heap
   - Prototype: `int heap_extract(heap_t **root)`;
@@ -472,7 +472,7 @@ Properties of a Max Binary Heap:
 
 ---
 
-### [40. Heap - Sort](./134-heap_to_sorted_array.c)
+### 40. Heap - Sort
 
 - Write a function that converts a Binary Max Heap to a sorted array of integers
   - Prototype: `int *heap_to_sorted_array(heap_t *heap, size_t *size)`;
@@ -483,7 +483,7 @@ Properties of a Max Binary Heap:
 
 ---
 
-### [41. Big O #Binary Heap](./135-O)
+### 41. Big O #Binary Heap
 
 - What are the average time complexities of those operations on a Binary Heap (one answer per line):
 
