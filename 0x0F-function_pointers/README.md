@@ -335,7 +335,7 @@ julien@ubuntu:~/0x0e. Function pointers$ ./calc 1024 '%' 98
 
 ---
 
-### [4. Most hackers are young because young people tend to be adaptable. As long as you remain adaptable, you can always be a good hacker](./100-main_opcodes.c)
+### 4. Most hackers are young because young people tend to be adaptable. As long as you remain adaptable, you can always be a good hacker
 
 - Write a program that prints the opcodes of its own main function.
   - Requirements: ./main number_of_bytes
