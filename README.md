@@ -25,7 +25,7 @@ This repository contains programs written in C for the Low Level-Programming cur
 | [0x0E. C - Structures, typedef](./0x0E-structures_typedef) | Implementation of structs in C |
 | [0x0F. C - Function pointers](./0x0F-function_pointers) | How to use function pointers to write more dynamic programs |
 | [0x10. C - Variadic functions](./0x10-variadic_functions) | Writing functions that can take a variable amount of arguments |
-| [0x11. C - printf]() | Custom implementation of C's printf (midterm project) |
+| [0x11. C - printf](./0x11-printf) | Custom implementation of C's printf (midterm project) |
 | [0x12. C - Singly linked lists](./0x12-singly_linked_lists) | Creation and traversal of singly linked lists in C |
 | [0x13. C - More singly linked lists](./0x13-more_singly_linked_lists) | Node retrieval, insertion, deletion |
 | [0x14. C - Bit manipulation](./0x14-bit_manipulation) | Use of bitwise operators in C programs |
